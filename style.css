@@ -1,0 +1,11 @@
+img.resize {
+	height: auto;
+	width: auto;
+	max-width: 200px;
+	max-height: 200px;
+    
+}
+
+span { overflow:hidden; width:10px; height:40px; }
+span img { width:20%; height:auto; }
+
