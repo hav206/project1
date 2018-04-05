@@ -13,16 +13,16 @@ var deckOfCards = {myCard : [
 	
 	{"Twospade" : "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cards-2-Spade.svg/2000px-Cards-2-Spade.svg.png",
      "spadeDown" : facedownCard,
- 	  value : twoCardValue},
+ 	  id : twoCardValue},
     {"Twoclub" : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/2_of_clubs.svg/2000px-2_of_clubs.svg.png",
      "spadeDown" : facedownCard,
-       value : twoCardValue},
+       id : twoCardValue},
     {"TwoDimond" : "https://st2.depositphotos.com/2810953/8331/v/950/depositphotos_83316630-stock-illustration-poker-playing-card-2-diamond.jpg",
 	 "spadeDown" : facedownCard,
-	   value : twoCardValue},
+	   id : twoCardValue},
     {"TwoHeart" : "https://i.pinimg.com/236x/ef/40/8a/ef408a46f21678fa25ad51bc83261993--house-of-cards-heart-cards.jpg",
 	 "spadeDown" :facedownCard,
-	  value : twoCardValue}
+	  id : twoCardValue}
 ]};
 
 //var myImage = document.createElement("img");
@@ -66,3 +66,17 @@ for (var i = 0; i < 4; i++){
 // 3 would give me 4
 // 4 would give me 5
 // 5 would map me 6
+
+document.addEventListener('click', function(){
+	//console.log("test");
+	//var cardChosen = Math.floor((Math.random() * 52) + 1);
+	//console.log(cardChosen);
+	for (var i = 0; i < 4; i++){
+		if (1 === deckOfCards.myCard[i].id )
+		{
+			console.log("test")
+			break;
+		}
+	}
+	//if(cardChosen === )
+})
