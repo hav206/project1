@@ -1,11 +1,24 @@
-img.resize {
-	height: auto;
-	width: auto;
-	max-width: 200px;
-	max-height: 200px;
-    
+
+body{
+	display : flex;
+	flex-wrap: wrap;
+	flex-direction: row-reverse;
 }
 
-span { overflow:hidden; width:10px; height:40px; }
-span img { width:20%; height:auto; }
+body >* {
+	flex 1 1 50px;
+}
+
+img.resize {
+	width: 200px;
+	height : 200px;
+}
+img {
+	width: 200px;
+	height : 200px;
+}
+
+
+
+
 

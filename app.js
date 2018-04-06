@@ -7,6 +7,7 @@
 //}
 const allCardFaceDown = 1;
 const twoCardValue = 1;
+const ThreeCardValue = 2;
 var facedownCard = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQewIKS55HnANFp_U1m4QuV4ni9TflYoJtiH4SnNqC_2aBnCLPNKQ";
 console.log("hello");
 var deckOfCards = {myCard : [
@@ -22,36 +23,45 @@ var deckOfCards = {myCard : [
 	   id : twoCardValue},
     {"TwoHeart" : "https://i.pinimg.com/236x/ef/40/8a/ef408a46f21678fa25ad51bc83261993--house-of-cards-heart-cards.jpg",
 	 "spadeDown" :facedownCard,
-	  id : twoCardValue}
+	  id : twoCardValue},
+	  {"Threespade" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaU1_m67G_svhDdJNeSjqH0yXs3KpxzgRpfCTcU45W8l_y-hYq",
+	   "spadeDown" : facedownCard,
+	   id : ThreeCardValue}
 ]};
 
 //var myImage = document.createElement("img");
 
 //var myImage = $('<img id="img">');
 //console.log(myImage);
-//var spanList;
-//var myDiv;
-for (var i = 0; i < 4; i++){
-	//var myImage = document.createElement("img");
-	//myImage.attr("value", "image " + i);
-	var myImage = $( '<img />', {
-		value: allCardFaceDown.toString(),
-		src: deckOfCards.myCard[i].spadeDown
-	})
-	 var spanList = $("<span></span>");
-	//console.log(spanList);
-	var myDiv = $("<div></div>");
-	console.log(myImage);
-	//console.log(myDiv);
-	//myImage.src = deckOfCards.myCard[i].spadeDown;
-	
-	console.log(myImage);
-	spanList.append(myImage);
-	myDiv.append(spanList);
-	$("body").append(myDiv);
-	//document.body.append(myDiv);
-}
+var spanList;
+var myDiv;
 
+
+var mytable = $('<table></table>').attr({ id: "basicTable" });
+var row;
+var column;
+var index = 0;
+for (var i = 0; i < 1; i++)
+{
+	row  = $("<tr></tr>");
+	for (var j = 0; j < 4; j++){
+
+		column = $("<td></td>");
+		var myImage = $( '<img />', {
+			value: allCardFaceDown.toString(),
+			src: deckOfCards.myCard[index].spadeDown
+		})
+		index++;
+		column.append(myImage);
+		row.append(column);
+	}
+	//row.append(column);
+	mytable.append(row);
+	$("body").append(mytable);
+
+}
+//mytable.append(row);
+//$("body").append(mytable);
 //document.body.append(myDiv);
 
 //myImage.src = deckOfCards.myCard[3].TwoHeart;
@@ -67,16 +77,28 @@ for (var i = 0; i < 4; i++){
 // 4 would give me 5
 // 5 would map me 6
 
-document.addEventListener('click', function(){
+let image = $('img');
+
+Array.from(image).forEach(function(image){
+	image.addEventListener('click', function()
+	{
 	//console.log("test");
-	//var cardChosen = Math.floor((Math.random() * 52) + 1);
+		var cardChosen = Math.floor((Math.random() * 52) + 1);
 	//console.log(cardChosen);
-	for (var i = 0; i < 4; i++){
-		if (1 === deckOfCards.myCard[i].id )
+		for (var i = 0; i < 4; i++)
 		{
-			console.log("test")
-			break;
+			if (1 === deckOfCards.myCard[i].id )
+			{
+			//$('img[src=facedownCard]').attr('src', deckOfCards.myCard[0].Twospade);
+			//$(mytable).find('img').attr('src', deckOfCards.myCard[0].Twospade );
+			//console.log("test");
+				$(this).attr('src', deckOfCards.myCard[0].Twospade);
+				//spanList.val(deckOfCards.myCard[0].Twospade);
+				break;
+			}
 		}
-	}
 	//if(cardChosen === )
+	})
 })
+console.log(image);
+
